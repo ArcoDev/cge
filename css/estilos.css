@@ -885,6 +885,12 @@ a li:hover {
   height: auto;
 }
 
+@media screen and (max-width: 767px) {
+  .area .contacto {
+    font-size: 16px;
+  }
+}
+
 .area .alertas {
   width: 65%;
   margin: 0 auto;

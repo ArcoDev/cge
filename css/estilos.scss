@@ -647,6 +647,11 @@ a li {
     }
     .contacto {
         height: auto;
+        @media screen and (max-width: $movil) {
+            & {
+                font-size: 16px;
+            }
+        }
     }
     .alertas {
         width: 65%;
