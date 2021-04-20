@@ -1,4 +1,5 @@
 <?php
+/*var_dump($_POST);
 $correoDestino = "cacosta@awsoftware.mx";
 $nombre = $_POST["nombre"];
 $email = $_POST["email"];
@@ -11,4 +12,5 @@ $contenido = "Nombre: " .$nombre.
 "\nAsunto: " .$asunto.
 "\nMensaje: " .$mensaje;
 
-mail($correoDestino, "Han enviado un mensaje de contacto desde tu sitio web.", $contenido);
+mail($correoDestino, "Han enviado un mensaje de contacto desde tu sitio web.", $contenido);*/
+echo 'Hola';

@@ -1,5 +1,6 @@
 addEventListener("DOMContentLoaded", () => {
     const menu = document.getElementById("menu");
+    const enviar = document.getElementById("enviar");
     if (menu) {
         menu.addEventListener("click", () => {
             const bars = document.getElementById("bars");
@@ -38,9 +39,9 @@ addEventListener("DOMContentLoaded", () => {
     }
 });
 
-/* Validacion de formulario */
-function validar() {
-    var nombre, email, asunto, mensaje, expresionEmail, error, txtError, enviar;
+$('#enviar').click(function() {
+    /* Validacion de formulario */
+    var nombre, email, asunto, mensaje, expresionEmail, error, txtError;
     nombre = document.getElementById("nombre").value;
     email = document.getElementById("email").value;
     asunto = document.getElementById("asunto").value;
@@ -48,10 +49,8 @@ function validar() {
     error = document.getElementById("error");
     exito = document.getElementById("exito");
     txtError = document.getElementById("txtError");
-    enviar = document.getElementById("enviar");
 
     expresionEmail = /\w+@\w+\.+[a-z]/;
-
     if (nombre === "" || email === "" || asunto === "" || mensaje === "") {
         error.style.opacity = "1";
         txtError.innerHTML = "Todos los campos son obligatorios";
@@ -87,5 +86,18 @@ function validar() {
             error.style.opacity = "0";
         }, 5000);
         return false;
+    } else {
+        ajaxEmail();
     }
+});
+
+function ajaxEmail() {
+    $.ajax({
+        url: 'email.php',
+        type: 'POST',
+        data: $('#enviar-correo').serialize(),
+        success: function() {
+            alert("Se envio tu mensaje correctamente");
+        }
+    });
 }
