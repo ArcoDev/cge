@@ -42,18 +42,6 @@ body::-webkit-scrollbar-thumb {
 
 $movil: 767px;
 $monitor: 1920px;
-@mixin sizeCajasHeader {
-    height: 100vh;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    @media screen and (max-width: $movil) {
-        & {
-            height: 50vh;
-        }
-    }
-}
-
 @mixin linea {
     width: 20%;
     height: 2px;
@@ -189,9 +177,31 @@ a li {
 
 /* Header */
 
+@mixin sizeCajasHeader {
+    height: 750px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @media screen and (max-width: $movil) {
+        & {
+            height: 50vh;
+        }
+    }
+}
+
 .caja1 {
     @include sizeCajasHeader();
-    background: url("../assets/img/caj1.png");
+    background-image: url("../assets/img/imagen_2.png");
+    @media screen and (max-width: $movil) {
+        & {
+            display: none;
+        }
+    }
+}
+
+.caja2 {
+    @include sizeCajasHeader();
+    background: url("../assets/img/imagen_1.png");
     .logo {
         width: 500px;
         height: 400px;
@@ -200,17 +210,6 @@ a li {
                 width: 95%;
                 height: 70%;
             }
-        }
-    }
-}
-
-.caja2 {
-    @include sizeCajasHeader();
-    background: url("../assets/img/caj2.png");
-    background-position: 0 745px;
-    @media screen and (max-width: $movil) {
-        & {
-            display: none;
         }
     }
     .items {

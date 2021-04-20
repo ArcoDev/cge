@@ -154,11 +154,11 @@ a li:hover {
 
 /* Header */
 .caja1 {
-  height: 100vh;
+  height: 750px;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  background: url("../assets/img/caj1.png");
+  background-image: url("../assets/img/imagen_2.png");
 }
 
 @media screen and (max-width: 767px) {
@@ -167,25 +167,18 @@ a li:hover {
   }
 }
 
-.caja1 .logo {
-  width: 500px;
-  height: 400px;
-}
-
 @media screen and (max-width: 767px) {
-  .caja1 .logo {
-    width: 95%;
-    height: 70%;
+  .caja1 {
+    display: none;
   }
 }
 
 .caja2 {
-  height: 100vh;
+  height: 750px;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  background: url("../assets/img/caj2.png");
-  background-position: 0 745px;
+  background: url("../assets/img/imagen_1.png");
 }
 
 @media screen and (max-width: 767px) {
@@ -194,9 +187,15 @@ a li:hover {
   }
 }
 
+.caja2 .logo {
+  width: 500px;
+  height: 400px;
+}
+
 @media screen and (max-width: 767px) {
-  .caja2 {
-    display: none;
+  .caja2 .logo {
+    width: 95%;
+    height: 70%;
   }
 }
 
