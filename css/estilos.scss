@@ -140,6 +140,13 @@ $monitor: 1920px;
     height: 40vh;
     background: #ececec;
     z-index: 100;
+    display: grid;
+    align-items: center;
+    img {
+        width: 70%;
+        height: 60%;
+        margin: 0 auto;
+    }
 }
 
 .animaItems {
@@ -658,7 +665,6 @@ a li {
             background-color: #f2dede;
             border-color: #ebccd1;
             border-radius: 10px;
-            margin-top: -20px;
             transition: all 2s ease-out;
             padding: 10px 0;
             opacity: 0;

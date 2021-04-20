@@ -18,7 +18,26 @@ addEventListener("DOMContentLoaded", () => {
             items.classList.toggle("animaItems");
         });
     }
+    if (link) {
+        link.addEventListener("click", () => {
+            const bars = document.getElementById("bars");
+            const cerrar = document.getElementById("cerrar");
+            const imgMenu = document.getElementById("img-menu");
+            const infoCorreo = document.getElementById("info-correo");
+            const logo = document.getElementById("info-logo");
+            const items = document.getElementById("items");
+            bars.classList.toggle("d-none");
+            cerrar.classList.toggle("d-none");
+            imgMenu.classList.toggle("d-none");
+            imgMenu.classList.toggle("animaImg");
+            items.classList.toggle("d-none");
+            infoCorreo.classList.toggle("d-none");
+            logo.classList.toggle("d-none");
+            items.classList.toggle("animaItems");
+        });
+    }
 });
+
 /* Validacion de formulario */
 function validar() {
     var nombre, email, asunto, mensaje, expresionEmail, error, txtError, enviar;
