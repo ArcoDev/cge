@@ -1,0 +1,753 @@
+/*Globales*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Libre Baskerville', serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #fff;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none!important;
+}
+
+
+/*Estilos de la barra de scroll*/
+
+body::-webkit-scrollbar {
+    width: 15px;
+    background: #ececec;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(243, 205, 27, 1) 0%, rgba(214, 120, 14, 1) 100%, rgba(243, 205, 27, 1) 100%);
+    border-right: 2px solid #f9d115;
+}
+
+
+/* Tipografía */
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Montserrat&display=swap');
+
+/* Responsive */
+
+$movil: 767px;
+$monitor: 1920px;
+@mixin sizeCajasHeader {
+    height: 100vh;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @media screen and (max-width: $movil) {
+        & {
+            height: 50vh;
+        }
+    }
+}
+
+@mixin linea {
+    width: 20%;
+    height: 2px;
+    background: #f9d115;
+    margin: 30px auto;
+}
+
+@mixin titulos {
+    font-family: 'Libre Baskerville', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    @media screen and (max-width: $movil) {
+        & {
+            font-size: 2rem;
+        }
+    }
+}
+
+
+/* Menu*/
+
+.menu {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    right: 0px;
+    background: linear-gradient(135deg, rgba(243, 205, 27, 1) 0%, rgba(214, 120, 14, 1) 100%, rgba(243, 205, 27, 1) 100%);
+    color: #FFF;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #000;
+    z-index: 200;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+    &:hover {
+        background: linear-gradient(135deg, rgb(221, 187, 34) 0%, rgb(196, 118, 30) 100%, rgb(218, 184, 33) 100%);
+        transform: scale(1.04);
+    }
+    .fas {
+        margin-top: 16px;
+    }
+}
+
+
+/* Aimacion del menu al dar click */
+
+.animaImg {
+    position: fixed;
+    width: 50%;
+    left: 0;
+    height: 60vh;
+    background: url("../assets/img/img-men.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 100;
+    transition: all .3s ease-out;
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+
+.info-correo {
+    position: fixed;
+    width: 25%;
+    left: 0;
+    bottom: 0;
+    height: 40vh;
+    background: #b2261d;
+    z-index: 100;
+}
+
+.txtInfo {
+    color: #fff;
+    text-decoration: none!important;
+    i {
+        font-size: 20px;
+        margin-top: 5px;
+    }
+    p {
+        margin-left: -15px;
+        font-size: 16px;
+    }
+    &:hover {
+        color: #f9d115;
+    }
+}
+
+.info-logo {
+    position: fixed;
+    width: 25%;
+    left: 25%;
+    bottom: 0;
+    height: 40vh;
+    background: #ececec;
+    z-index: 100;
+}
+
+.animaItems {
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    background: #1c1b1b;
+    z-index: 100;
+    padding: 150px 0 0 130px;
+    @media screen and (max-width: $movil) {
+        & {
+            width: 100%;
+            padding: 130px 0 0 50px;
+        }
+    }
+}
+
+a li {
+    text-decoration: none;
+    color: #fff;
+    font-size: 50px;
+    line-height: 80px;
+    list-style: none;
+    &:hover {
+        color: #f9d115
+    }
+    @media screen and (max-width: $movil) {
+        & {
+            font-size: 35px
+        }
+    }
+}
+
+
+/* Header */
+
+.caja1 {
+    @include sizeCajasHeader();
+    background: url("../assets/img/caj1.png");
+    .logo {
+        width: 500px;
+        height: 400px;
+        @media screen and (max-width: $movil) {
+            & {
+                width: 95%;
+                height: 70%;
+            }
+        }
+    }
+}
+
+.caja2 {
+    @include sizeCajasHeader();
+    background: url("../assets/img/caj2.png");
+    background-position: 0 745px;
+    @media screen and (max-width: $movil) {
+        & {
+            display: none;
+        }
+    }
+    .items {
+        background: black;
+    }
+}
+
+.linea {
+    @include linea();
+    height: 150px;
+    width: 2px;
+    margin-top: -50px;
+}
+
+
+/*Nosotros*/
+
+.nosotros {
+    height: 400px;
+    background: url("../assets/img/nosotros.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    h2 {
+        @include titulos();
+        color: #fff;
+    }
+    p {
+        color: #fff;
+        font-size: 18px;
+        padding: 0 30px;
+        @media screen and (max-width: $movil) {
+            & {
+                font-size: 14px;
+                padding: 0 10px
+            }
+        }
+    }
+    .linea {
+        @include linea();
+        @media screen and (max-width: $movil) {
+            & {
+                width: 50%;
+            }
+        }
+    }
+}
+
+
+/* Valores */
+
+.valores {
+    height: 400px;
+    padding: 0 50px;
+    @media screen and (max-width: $movil) {
+        & {
+            padding: 0;
+        }
+    }
+    h2 {
+        @include titulos();
+        color: #1c1b1b;
+        margin-bottom: 50px;
+    }
+    p {
+        color: #1c1b1b;
+        font-size: 18px;
+        font-weight: bold;
+        @media screen and (max-width: $movil) {
+            & {
+                font-size: 14px;
+            }
+        }
+    }
+    .lineaVal {
+        background-image: url("../assets/img/linea-valores.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        .img-valores {
+            width: 130px;
+            height: 130px;
+            margin-bottom: 20px;
+            transition: all .4s ease-in-out;
+            @media screen and (max-width: $movil) {
+                & {
+                    width: 90px;
+                    height: 90px;
+                }
+            }
+            &:hover {
+                transform: scale(1.04);
+            }
+        }
+    }
+}
+
+.info-valores {
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    @media screen and (max-width: $movil) {
+        & {
+            margin-top: 150px;
+        }
+    }
+    .caja-mision,
+    .caja-vision {
+        @media screen and (max-width: $movil) {
+            & {
+                flex-wrap: wrap;
+            }
+        }
+    }
+    .img-mision {
+        width: 80%;
+        height: 80%;
+        margin-bottom: 50px;
+        @media screen and (max-width: $movil) {
+            & {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 0;
+            }
+        }
+    }
+    h2 {
+        @include titulos();
+        color: #1c1b1b;
+        margin-bottom: 30px;
+    }
+    p {
+        font-size: 22px;
+        color: #1c1b1b;
+        font-weight: bold;
+        text-align: justify;
+        @media screen and (max-width: $movil) {
+            & {
+                font-size: 15px;
+            }
+        }
+    }
+    .linea {
+        @include linea();
+        width: 70%;
+        @media screen and (max-width: $movil) {
+            & {
+                margin: 0;
+            }
+        }
+    }
+}
+
+
+/* Info texto */
+
+.info-txt {
+    height: 400px;
+    margin-bottom: 30px;
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        height: 400px;
+        background: rgba(0, 0, 0, 0.705);
+        left: 0;
+        @media screen and (max-width: $movil) {
+            & {
+                height: 1200px;
+            }
+        }
+    }
+    .img {
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        &-estudios {
+            height: 400px;
+            padding: 50px;
+            background-image: url("../assets/img/estudios-geotecnicos.jpg");
+        }
+        &-gimenta {
+            height: 400px;
+            padding: 50px;
+            background-image: url("../assets/img/cimentaciones.jpg");
+        }
+        &-estructura {
+            height: 400px;
+            padding: 50px;
+            background-image: url("../assets/img/estructuras.jpg");
+        }
+    }
+    h3 {
+        position: relative;
+        z-index: 11;
+        @include titulos();
+        font-size: 25px;
+        color: #f9d115;
+        margin-bottom: 30px;
+        @media screen and (max-width: $movil) {
+            & {
+                font-size: 20px;
+            }
+        }
+    }
+    p {
+        position: relative;
+        z-index: 11;
+        color: #fff;
+        font-size: 20px;
+        @media screen and (max-width: $movil) {
+            & {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+
+/* Info area */
+
+.area {
+    height: 600px;
+    @media screen and (max-width: $movil) {
+        & {
+            margin-top: 53rem;
+        }
+    }
+    .img-area {
+        width: 100%;
+        height: 100%;
+    }
+    .caja-roja {
+        height: 50px;
+        background: #b2261d;
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    p {
+        color: #1c1b1b;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: justify;
+        padding: 30px 160px 0 50px;
+        letter-spacing: 0;
+        span {
+            color: #b2261d;
+        }
+        @media screen and (max-width: $movil) {
+            & {
+                font-size: 15px;
+                text-align: unset;
+                padding: 30px 0 0 0;
+            }
+        }
+    }
+    h2 {
+        @include titulos();
+        margin: 50px 0;
+    }
+    .img-cajas {
+        width: 100%;
+        height: 300px;
+        padding: 0;
+    }
+    @mixin sizeLista {
+        background: #ececec;
+        height: 370px;
+        padding: 30px 0 30px 30px;
+        @media screen and (max-width: $movil) {
+            & {
+                height: auto;
+                padding: 20px 0 20px 30px;
+            }
+        }
+        li {
+            padding: 10px;
+            font-size: 16px;
+            color: #1c1b1b;
+            font-weight: bold;
+            @media screen and (max-width: $movil) {
+                & {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .lista {
+        @include sizeLista();
+    }
+    .lista2 {
+        @include sizeLista();
+        height: 430px;
+        @media screen and (max-width: $movil) {
+            & {
+                height: auto;
+            }
+        }
+    }
+    .lista3 {
+        @include sizeLista();
+        height: 200px;
+        @media screen and (max-width: $movil) {
+            & {
+                height: auto;
+            }
+        }
+    }
+    @mixin sizeServicios {
+        width: 100%;
+        height: 280px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .integral {
+        @include sizeServicios();
+        background-image: url("../assets/img/proyecto-implementaciones.jpg");
+    }
+    .tecnica {
+        @include sizeServicios();
+        background-image: url("../assets/img/asistencia-tecnica.jpg");
+    }
+    .patologias {
+        @include sizeServicios();
+        background-image: url("../assets/img/patologias.jpg");
+    }
+    .estructural {
+        @include sizeServicios();
+        background-image: url("../assets/img/evaluacion-estructural.jpg");
+    }
+    .estudios {
+        @include sizeServicios();
+        height: 480px;
+        margin-left: -15px;
+        background-image: url("../assets/img/estudios-geotecnicos.jpg");
+        @media screen and (max-width: $movil) {
+            & {
+                height: 280px;
+                width: 91%;
+                margin-left: 15px;
+            }
+        }
+    }
+    .peritajes {
+        @include sizeServicios();
+        height: 480px;
+        margin-right: -15px;
+        background-image: url("../assets/img/peritajes-estructurales.jpg");
+        @media screen and (max-width: $movil) {
+            & {
+                height: 280px;
+                width: 91%;
+                margin-right: 15px;
+            }
+        }
+    }
+    .capacitacion {
+        @include sizeServicios();
+        height: 250px;
+        margin-left: -15px;
+        background-image: url("../assets/img/capacitacion.jpg");
+        @media screen and (max-width: $movil) {
+            & {
+                height: 280px;
+                width: 91%;
+                margin-left: 15px;
+                margin-top: -20px;
+            }
+        }
+    }
+    .galeria {
+        margin: 50px 0;
+        @media screen and (max-width: $movil) {
+            & {
+                margin: 50px 0 0 0;
+                padding-left: 0;
+            }
+        }
+        @mixin siszeGal {
+            width: 100%;
+            height: 300px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: all .3s ease-out;
+            &:hover {
+                transform: scale(1.03);
+            }
+            @media screen and (max-width: $movil) {
+                & {
+                    margin: 0
+                }
+            }
+        }
+        .gal1 {
+            @include siszeGal();
+            background-image: url("../assets/img/img1.jpg");
+        }
+        .gal2 {
+            @include siszeGal();
+            background-image: url("../assets/img/img2.jpg");
+        }
+        .gal3 {
+            @include siszeGal();
+            background-image: url("../assets/img/img3.jpg");
+        }
+        .gal4 {
+            @include siszeGal();
+            background-image: url("../assets/img/img4.jpg");
+        }
+        .gal5 {
+            @include siszeGal();
+            background-image: url("../assets/img/img5.jpg");
+        }
+        .gal6 {
+            @include siszeGal();
+            background-image: url("../assets/img/img6.jpg");
+        }
+        h3 {
+            font-size: 16px;
+            color: #1c1b1b;
+            font-weight: bold;
+        }
+    }
+    .contacto {
+        height: auto;
+    }
+    .alertas {
+        width: 65%;
+        margin: 0 auto;
+        @media screen and (max-width: $movil) {
+            & {
+                width: 95%;
+            }
+        }
+        @mixin alertas {}
+        .error {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+            border-radius: 10px;
+            margin-top: -20px;
+            transition: all 2s ease-out;
+            padding: 10px 0;
+            opacity: 0;
+            i {
+                font-size: 1.5rem;
+                margin-right: 10px;
+                @media screen and (max-width: $movil) {
+                    & {
+                        padding-left: 20px;
+                        margin-right: 0;
+                    }
+                }
+            }
+            h6 {
+                font-size: 16px;
+                text-transform: uppercase;
+                font-weight: 700;
+                letter-spacing: 3px;
+                margin-top: 10px;
+                text-align: center;
+                @media screen and (max-width: $movil) {
+                    & {
+                        font-size: 12px
+                    }
+                }
+            }
+        }
+    }
+    input {
+        padding: 20px 10px;
+        margin: 15px 0;
+        border-radius: 0!important;
+        border: 1px solid #1c1b1b;
+    }
+    button {
+        padding: 10px 50px;
+        background: #b2261d;
+        color: #fff;
+        border: transparent;
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+    .info-con {
+        padding: 10% 0 0 0;
+        a {
+            text-decoration: none;
+        }
+        i {
+            font-size: 20px;
+            color: #1c1b1b;
+        }
+    }
+    h4 {
+        font-size: 16px;
+        color: #1c1b1b;
+        font-weight: bold;
+        margin-left: -30px;
+        @media screen and (max-width: $movil) {
+            & {
+                margin-left: -20px;
+            }
+        }
+    }
+    h5 {
+        font-size: 16px;
+        color: #1c1b1b;
+        font-weight: bold;
+    }
+}
+
+.footer {
+    height: 80px;
+    margin: 0 -30px;
+    background: #1c1b1b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    h2 {
+        color: #fff;
+        font-size: 16px;
+        span a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    }
+}
