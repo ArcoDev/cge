@@ -1,6 +1,5 @@
 addEventListener("DOMContentLoaded", () => {
     const menu = document.getElementById("menu");
-    const enviar = document.getElementById("enviar");
     if (menu) {
         menu.addEventListener("click", () => {
             const bars = document.getElementById("bars");
@@ -41,7 +40,7 @@ addEventListener("DOMContentLoaded", () => {
 
 $('#enviar').click(function() {
     /* Validacion de formulario */
-    var nombre, email, asunto, mensaje, expresionEmail, error, exito, msjAlerta;
+    var nombre, email, asunto, mensaje, expresionEmail, error, exito, msjAlerta, enviar;
     nombre = document.getElementById("nombre").value;
     email = document.getElementById("email").value;
     asunto = document.getElementById("asunto").value;
@@ -49,7 +48,7 @@ $('#enviar').click(function() {
     error = document.getElementById("error");
     exito = document.getElementById("exito");
     msjAlerta = document.getElementById("msjAlerta");
-
+    enviar = document.getElementById("enviar-correo");
     expresionEmail = /\w+@\w+\.+[a-z]/;
     if (nombre === "" || email === "" || asunto === "" || mensaje === "") {
         error.style.opacity = "1";
@@ -93,7 +92,7 @@ $('#enviar').click(function() {
             data: $('#enviar-correo').serialize(),
             success: function() {
                 exito.style.opacity = "1";
-                msjAlerta.innerHTML = "Se ha enviado correctamente tu mensaje.";
+                enviar.reset();
                 setTimeout(function() {
                     exito.style.opacity = "0";
                 }, 4000);
