@@ -65,8 +65,10 @@ $movil: 767px;
 
 .menu {
     position: fixed;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    align-items: center;
     top: 50%;
     right: 0px;
     background: linear-gradient(135deg, rgba(243, 205, 27, 1) 0%, rgba(214, 120, 14, 1) 100%, rgba(243, 205, 27, 1) 100%);
@@ -86,137 +88,145 @@ $movil: 767px;
             top: 0%;
         }
     }
-    .fas {
-        margin-top: 16px;
+}
+
+
+/*header*/
+
+.caja-obreros {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+    .obrero {
+        width: 50%;
+        height: 100%;
+    }
+    @mixin imgObreros {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        object-fit: cover;
+    }
+    .obrero1 {
+        background-image: url("../assets/img/imagen_1.png");
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .logo {
+            width: 550px;
+            height: 400px;
+            object-fit: contain;
+            @media screen and (max-width: $movil) {
+                & {
+                    width: 95%;
+                    height: 70%;
+                }
+            }
+        }
+    }
+    .obrero2 {
+        background-image: url("../assets/img/imagen_2.png");
+    }
+}
+
+.menu {
+    position: fixed;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: chocolate;
+    cursor: pointer;
+}
+
+.img-men {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 50vh;
+    background: orange;
+    transition: all .9s ease-in-out;
+    transform: translate3d(-110%, 0%, 0px);
+    z-index: 110;
+}
+
+.correo-tel {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 25%;
+    height: 50vh;
+    background: #000;
+    transition: all .9s ease-in-out;
+    transform: translate3d(0%, 110%, 0px);
+    z-index: 110;
+}
+
+.logo-men {
+    position: fixed;
+    left: 25%;
+    bottom: 0;
+    background: blue;
+    width: 25%;
+    height: 50vh;
+    transition: all .9s ease-in-out;
+    transform: translate3d(0%, 110%, 0px);
+    z-index: 110;
+}
+
+.items {
+    position: fixed;
+    right: 0px;
+    width: 50%;
+    height: 100%;
+    background: black;
+    transition: all .9s ease-in-out;
+    transform: translate3d(0px, -100vh, 0px);
+    z-index: 110;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 100px;
+    text-align: justify;
+    a li {
+        text-decoration: none;
+        color: #fff;
+        font-size: 50px;
+        line-height: 85px;
+        list-style: none;
+        &:hover {
+            color: #f9d115
+        }
+        @media screen and (max-width: $movil) {
+            & {
+                font-size: 35px;
+            }
+        }
     }
 }
 
 
 /* Aimacion del menu al dar click */
 
-.animaImg {
-    position: fixed;
-    width: 50%;
-    left: 0;
-    height: 60vh;
-    background: url("../assets/img/img-men.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 100;
-    transition: all .3s ease-out;
-    animation: anima-img 1s ease-in-out 0s;
-    &:hover {
-        transform: scale(1.03);
-    }
-}
-
-@keyframes anima-img {
-    0% {
-        width: 0%;
-    }
-    100% {
-        width: 50%
-    }
-}
-
-.info-correo {
-    position: fixed;
-    width: 25%;
-    left: 0;
-    bottom: 0;
-    height: 40vh;
-    background: #b2261d;
-    z-index: 100;
-    animation: animaLogo 1s ease-in-out 0s;
-}
-
-.txtInfo {
-    color: #fff;
-    text-decoration: none!important;
-    i {
-        font-size: 20px;
-        margin-top: 5px;
-    }
-    p {
-        margin-left: -15px;
-        font-size: 16px;
-    }
-    &:hover {
-        color: #f9d115;
-    }
-}
-
-.info-logo {
-    position: fixed;
-    width: 25%;
-    left: 25%;
-    bottom: 0;
-    height: 40vh;
-    background: #ececec;
-    z-index: 100;
-    display: grid;
-    align-items: center;
-    animation: animaLogo 1s ease-in-out 0s;
-    img {
-        width: 70%;
-        height: 60%;
-        margin: 0 auto;
-    }
-}
-
-@keyframes animaLogo {
-    0% {
-        height: 0%;
-    }
-    100% {
-        height: 40vh;
-    }
-}
-
 .animaItems {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 80px;
-    right: 0;
-    width: 50%;
-    height: 100vh;
-    background: #1c1b1b;
-    z-index: 100;
-    animation: animaHe 1s ease-in-out 0s;
-    @media screen and (max-width: $movil) {
-        & {
-            width: 100%;
-            padding: 130px 0 0 50px;
-        }
-    }
+    transform: translate3d(0px, 0%, 0px);
 }
 
-@keyframes animaHe {
-    0% {
-        height: 0%;
-    }
-    100% {
-        height: 100vh;
-    }
+.animaImg {
+    transform: translate3d(0px, 0%, 0px);
 }
 
-a li {
-    text-decoration: none;
-    color: #fff;
-    font-size: 50px;
-    line-height: 80px;
-    list-style: none;
-    &:hover {
-        color: #f9d115
-    }
-    @media screen and (max-width: $movil) {
-        & {
-            font-size: 35px;
-        }
-    }
+.animaCorreo {
+    transform: translate3d(0px, 0%, 0px);
+}
+
+.animaLogo {
+    transform: translate3d(0px, 0%, 0px);
 }
 
 
@@ -231,34 +241,6 @@ a li {
         & {
             height: 50vh;
         }
-    }
-}
-
-.caja1 {
-    @include sizeCajasHeader();
-    background-image: url("../assets/img/imagen_2.png");
-    @media screen and (max-width: $movil) {
-        & {
-            display: none;
-        }
-    }
-}
-
-.caja2 {
-    @include sizeCajasHeader();
-    background: url("../assets/img/imagen_1.png");
-    .logo {
-        width: 500px;
-        height: 400px;
-        @media screen and (max-width: $movil) {
-            & {
-                width: 95%;
-                height: 70%;
-            }
-        }
-    }
-    .items {
-        background: black;
     }
 }
 
@@ -278,6 +260,7 @@ a li {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     h2 {
         @include titulos();
         color: #fff;

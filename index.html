@@ -20,91 +20,43 @@
 </head>
 
 <body id="body">
-    <div class="col-12">
-        <div id="menu" class="menu">
-            <i id="bars" class="fas fa-bars" width="50" height="50"></i>
-            <i id="cerrar" class="fas fa-times d-none" width="50" height="50"></i>
-        </div>
-        <div id="img-menu" class="d-none"></div>
-        <div id="info-correo" class="info-correo d-none">
-            <div class="row" style="margin: 40px;">
-                <!-- Correos -->
-                <div class="col-12">
-                    <a class="d-flex txtInfo" href="mailto:ventas@cgeotec.com">
-                        <div class="col-2"><i class="far fa-envelope"></i></div>
-                        <div class="col-10">
-                            <p>ventas@cgeotec.com</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12">
-                    <a class="d-flex txtInfo" href="mailto:ocardenas@cgeotect.com">
-                        <div class="col-2"><i class="far fa-envelope"></i></div>
-                        <div class="col-10">
-                            <p>ocardenas@cgeotect.com</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12" style="margin-bottom: 30px;">
-                    <a class="d-flex txtInfo" href="mailto:cgetechnicale@gmail.com">
-                        <div class="col-2"><i class="far fa-envelope"></i></div>
-                        <div class="col-10">
-                            <p>cgetechnicale@gmail.com</p>
-                        </div>
-                    </a>
-                </div>
-                <!-- Telefonos -->
-                <div class="col-12">
-                    <a class="d-flex txtInfo" href="tel:8711057357">
-                        <div class="col-2"><i class="fas fa-phone"></i></div>
-                        <div class="col-10">
-                            <p>8711057357</p>
-                        </div>
-                    </a>
-
-                </div>
-                <div class="col-12">
-                    <a class="d-flex txtInfo" href="tel:8711312714">
-                        <div class="col-2"><i class="fas fa-phone"></i></div>
-                        <div class="col-10">
-                            <p>8711312714</p>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-        </div>
-        <div id="info-logo" class="info-logo d-none">
-            <img src="assets/img/logotipo.png" alt="Logo cge">
-        </div>
-        <div id="items" class="items d-none">
-            <ul id="link">
-                <a href="index.html ">
-                    <li>Inicio</li>
-                </a>
-                <a href="#nosotros ">
-                    <li>Nosotros</li>
-                </a>
-                <a href="#servicios ">
-                    <li>Servicios</li>
-                </a>
-                <a href="#galeria ">
-                    <li>Galería</li>
-                </a>
-                <a href="#contacto ">
-                    <li>Contacto</li>
-                </a>
-            </ul>
-        </div>
-        <!--Header -->
-        <div class="row d-flex flex-row-reverse header wow animate__animated animate__fadeInLeft animate__delay-.3s">
-            <div class="col-lg-6 col-md-6 col-sm-12 caja1  ">
-
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 caja2 d-flex align-items-center justify-content-center">
+    <div class="col-12 m-0 p-0">
+        <section class="caja-obreros  wow animate__animated animate__fadeInLeft animate__delay-.3s">
+            <div class="obrero obrero1">
                 <img loading="lazy" class="logo wow animate__animated animate__zoomIn animate__delay-1s " src="assets/img/logotipo.png " alt="logo cge ">
             </div>
-        </div>
+            <div class="obrero obrero2"></div>
+            <div id="img-men" class="img-men"></div>
+            <div id="anima-correo" class="correo-tel">
+
+            </div>
+            <div id="anima-logo" class="logo-men">
+
+            </div>
+            <div id="items" class="items">
+                <ul id="link">
+                    <a href="index.html">
+                        <li>Inicio</li>
+                    </a>
+                    <a href="#nosotros">
+                        <li>Nosotros</li>
+                    </a>
+                    <a href="#servicios">
+                        <li>Servicios</li>
+                    </a>
+                    <a href="#galeria">
+                        <li>Galería</li>
+                    </a>
+                    <a href="#contacto">
+                        <li>Contacto</li>
+                    </a>
+                </ul>
+            </div>
+            <div id="menu" class="menu">
+                <i id="bars" class="fas fa-bars" width="50" height="50"></i>
+                <i id="cerrar" class="fas fa-times d-none" width="50" height="50"></i>
+            </div>
+        </section>
         <!--Nosotros -->
         <section id="nosotros" class=" row align-items-center justify-content-center nosotros text-center ">
             <div class="col-sm-8 wow animate__animated animate__fadeInUp animate__delay-.9s">
@@ -451,17 +403,14 @@
             </footer>
         </section>
     </div>
-    <!--JS Personales-->
     <!--Wow JS-->
     <script src="includes/cdns/js/queryWow.js "></script>
     <script src="includes/cdns/js/wow.js "></script>
-    <!--Bootstrap 4 
-    <script src="includes/bootstrap/js/jquery.min.js "></script>-->
+    <!--Bootstrap 4 -->
     <script src="includes/bootstrap/js/popper.min.js "></script>
     <script src="includes/bootstrap/js/bootstrap.min.js "></script>
     <script src="js/jquery.js"></script>
-    <script>
-    </script>
+    <!--JS Personales-->
     <script src="js/main.js "></script>
 </body>
 

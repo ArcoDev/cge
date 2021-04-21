@@ -1,41 +1,39 @@
 addEventListener("DOMContentLoaded", () => {
     const menu = document.getElementById("menu");
+    const link = document.getElementById("link");
+
     if (menu) {
         menu.addEventListener("click", () => {
+            const animaItems = document.getElementById("items");
+            const animaImg = document.getElementById("img-men");
+            const animaCorreo = document.getElementById("anima-correo");
+            const animaLogo = document.getElementById("anima-logo");
+
             const bars = document.getElementById("bars");
             const cerrar = document.getElementById("cerrar");
-            const imgMenu = document.getElementById("img-menu");
-            const infoCorreo = document.getElementById("info-correo");
-            const logo = document.getElementById("info-logo");
-            const items = document.getElementById("items");
+            animaItems.classList.toggle("animaItems");
+            animaImg.classList.toggle("animaImg");
+            animaCorreo.classList.toggle("animaCorreo");
+            animaLogo.classList.toggle("animaLogo");
             bars.classList.toggle("d-none");
             cerrar.classList.toggle("d-none");
-            imgMenu.classList.toggle("d-none");
-            imgMenu.classList.toggle("animaImg");
-            items.classList.toggle("d-none");
-            infoCorreo.classList.toggle("d-none");
-            logo.classList.toggle("d-none");
-            items.classList.toggle("animaItems");
         });
     }
-
-
     if (link) {
         link.addEventListener("click", () => {
+            const animaItems = document.getElementById("items");
+            const animaImg = document.getElementById("img-men");
+            const animaCorreo = document.getElementById("anima-correo");
+            const animaLogo = document.getElementById("anima-logo");
+
             const bars = document.getElementById("bars");
             const cerrar = document.getElementById("cerrar");
-            const imgMenu = document.getElementById("img-menu");
-            const infoCorreo = document.getElementById("info-correo");
-            const logo = document.getElementById("info-logo");
-            const items = document.getElementById("items");
+            animaItems.classList.toggle("animaItems");
+            animaImg.classList.toggle("animaImg");
+            animaCorreo.classList.toggle("animaCorreo");
+            animaLogo.classList.toggle("animaLogo");
             bars.classList.toggle("d-none");
             cerrar.classList.toggle("d-none");
-            imgMenu.classList.toggle("d-none");
-            imgMenu.classList.toggle("animaImg");
-            items.classList.toggle("d-none");
-            infoCorreo.classList.toggle("d-none");
-            logo.classList.toggle("d-none");
-            items.classList.toggle("animaItems");
         });
     }
 });
