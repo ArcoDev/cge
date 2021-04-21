@@ -904,6 +904,10 @@ a li:hover {
 }
 
 .area .alertas .error {
+  position: fixed;
+  top: 1%;
+  right: 1%;
+  width: 35%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -914,6 +918,14 @@ a li:hover {
   transition: all 2s ease-out;
   padding: 10px 0;
   opacity: 0;
+  z-index: 100;
+}
+
+@media screen and (max-width: 767px) {
+  .area .alertas .error {
+    right: 0%;
+    width: 100%;
+  }
 }
 
 .area .alertas .error i {
@@ -929,7 +941,7 @@ a li:hover {
 }
 
 .area .alertas .error h6 {
-  font-size: 16px;
+  font-size: 14px;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 3px;
@@ -939,7 +951,66 @@ a li:hover {
 
 @media screen and (max-width: 767px) {
   .area .alertas .error h6 {
+    letter-spacing: 0;
     font-size: 12px;
+    margin-left: 10px;
+  }
+}
+
+.area .alertas .exito {
+  position: fixed;
+  top: 1%;
+  right: 1%;
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  border-radius: 10px;
+  transition: all 2s ease-out;
+  padding: 10px 0;
+  opacity: 0;
+  z-index: 100;
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+@media screen and (max-width: 767px) {
+  .area .alertas .exito {
+    right: 0%;
+    width: 100%;
+  }
+}
+
+.area .alertas .exito i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .area .alertas .exito i {
+    padding-left: 20px;
+    margin-right: 0;
+  }
+}
+
+.area .alertas .exito h6 {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .area .alertas .exito h6 {
+    letter-spacing: 0;
+    font-size: 12px;
+    margin-left: 10px;
   }
 }
 

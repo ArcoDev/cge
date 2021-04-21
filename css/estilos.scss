@@ -662,8 +662,11 @@ a li {
                 width: 95%;
             }
         }
-        @mixin alertas {}
-        .error {
+        @mixin alertas {
+            position: fixed;
+            top: 1%;
+            right: 1%;
+            width: 35%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -674,6 +677,13 @@ a li {
             transition: all 2s ease-out;
             padding: 10px 0;
             opacity: 0;
+            z-index: 100;
+            @media screen and (max-width: $movil) {
+                & {
+                    right: 0%;
+                    width: 100%;
+                }
+            }
             i {
                 font-size: 1.5rem;
                 margin-right: 10px;
@@ -685,7 +695,7 @@ a li {
                 }
             }
             h6 {
-                font-size: 16px;
+                font-size: 14px;
                 text-transform: uppercase;
                 font-weight: 700;
                 letter-spacing: 3px;
@@ -693,10 +703,21 @@ a li {
                 text-align: center;
                 @media screen and (max-width: $movil) {
                     & {
-                        font-size: 12px
+                        letter-spacing: 0;
+                        font-size: 12px;
+                        margin-left: 10px
                     }
                 }
             }
+        }
+        .error {
+            @include alertas();
+        }
+        .exito {
+            @include alertas();
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
         }
     }
     input {

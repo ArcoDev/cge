@@ -41,63 +41,63 @@ addEventListener("DOMContentLoaded", () => {
 
 $('#enviar').click(function() {
     /* Validacion de formulario */
-    var nombre, email, asunto, mensaje, expresionEmail, error, txtError;
+    var nombre, email, asunto, mensaje, expresionEmail, error, exito, msjAlerta;
     nombre = document.getElementById("nombre").value;
     email = document.getElementById("email").value;
     asunto = document.getElementById("asunto").value;
     mensaje = document.getElementById("mensaje").value;
     error = document.getElementById("error");
     exito = document.getElementById("exito");
-    txtError = document.getElementById("txtError");
+    msjAlerta = document.getElementById("msjAlerta");
 
     expresionEmail = /\w+@\w+\.+[a-z]/;
     if (nombre === "" || email === "" || asunto === "" || mensaje === "") {
         error.style.opacity = "1";
-        txtError.innerHTML = "Todos los campos son obligatorios";
+        msjAlerta.innerHTML = "Todos los campos son obligatorios";
         setTimeout(function() {
             error.style.opacity = "0";
         }, 5000);
         return false;
     } else if (nombre.length > 20) {
         error.style.opacity = "1";
-        txtError.innerHTML = "Nombre demasiado largo";
+        msjAlerta.innerHTML = "Nombre demasiado largo";
         setTimeout(function() {
             error.style.opacity = "0";
         }, 5000);
         return false;
     } else if (!expresionEmail.test(email)) {
         error.style.opacity = "1";
-        txtError.innerHTML = "El email es invalido";
+        msjAlerta.innerHTML = "El email es invalido";
         setTimeout(function() {
             error.style.opacity = "0";
         }, 5000);
         return false;
     } else if (asunto.length > 60) {
         error.style.opacity = "1";
-        txtError.innerHTML = "El asunto es demasiado largo";
+        msjAlerta.innerHTML = "El asunto es demasiado largo";
         setTimeout(function() {
             error.style.opacity = "0";
         }, 5000);
         return false;
     } else if (mensaje.length > 60) {
         error.style.opacity = "1";
-        txtError.innerHTML = "EL mensaje es demasiado largo";
+        msjAlerta.innerHTML = "EL mensaje es demasiado largo";
         setTimeout(function() {
             error.style.opacity = "0";
         }, 5000);
         return false;
     } else {
-        ajaxEmail();
+        $.ajax({
+            url: '../../web_cge/email.php',
+            type: 'POST',
+            data: $('#enviar-correo').serialize(),
+            success: function() {
+                exito.style.opacity = "1";
+                msjAlerta.innerHTML = "Se ha enviado correctamente tu mensaje.";
+                setTimeout(function() {
+                    exito.style.opacity = "0";
+                }, 4000);
+            }
+        });
     }
 });
-
-function ajaxEmail() {
-    $.ajax({
-        url: 'email.php',
-        type: 'POST',
-        data: $('#enviar-correo').serialize(),
-        success: function() {
-            alert("Se envio tu mensaje correctamente");
-        }
-    });
-}
