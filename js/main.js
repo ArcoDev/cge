@@ -18,6 +18,8 @@ addEventListener("DOMContentLoaded", () => {
             items.classList.toggle("animaItems");
         });
     }
+
+
     if (link) {
         link.addEventListener("click", () => {
             const bars = document.getElementById("bars");
