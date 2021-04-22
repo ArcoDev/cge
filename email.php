@@ -11,4 +11,3 @@ $contenido = "Nombre: " .$nombre.
 "\nMensaje: " .$mensaje;
 
 mail($correoDestino, "Han enviado un mensaje de contacto desde tu sitio web.", $contenido);
-/*header("Refresh:1;../../index.html");*/
