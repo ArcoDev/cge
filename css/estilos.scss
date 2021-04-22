@@ -102,9 +102,19 @@ $movil: 767px;
     text-align: center;
     font-size: 5rem;
     font-weight: bold;
+    @media screen and (max-width: $movil) {
+        & {
+            flex-wrap: wrap;
+        }
+    }
     .obrero {
         width: 50%;
         height: 100%;
+        @media screen and (max-width: $movil) {
+            & {
+                width: 100%;
+            }
+        }
     }
     @mixin imgObreros {
         background-position: center;
@@ -131,6 +141,11 @@ $movil: 767px;
     }
     .obrero2 {
         background-image: url("../assets/img/imagen_2.png");
+        @media screen and (max-width: $movil) {
+            & {
+                display: none;
+            }
+        }
     }
 }
 
@@ -159,6 +174,11 @@ $movil: 767px;
     &:hover {
         transform: scale(1.03);
     }
+    @media screen and (max-width: $movil) {
+        & {
+            display: none;
+        }
+    }
 }
 
 .correo-tel {
@@ -175,16 +195,22 @@ $movil: 767px;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding-left: 80px;
+    padding-left: 50px;
     .link-correo {
         display: flex;
         color: #fff;
+        margin-bottom: 15px;
         i {
-            font-size: 25px;
+            font-size: 20px;
         }
         p {
-            font-size: 16px;
+            font-size: 14px;
             margin: 0 0 0 10px;
+        }
+    }
+    @media screen and (max-width: $movil) {
+        & {
+            display: none;
         }
     }
 }
@@ -193,28 +219,47 @@ $movil: 767px;
     position: fixed;
     left: 25%;
     bottom: 0;
-    background: blue;
+    background: #ececec;
     width: 25%;
     height: 50vh;
     transition: all .9s ease-in-out;
     transform: translate3d(0%, 110%, 0px);
     z-index: 110;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: 300px;
+        height: 300px;
+        object-fit: contain;
+    }
+    @media screen and (max-width: $movil) {
+        & {
+            display: none;
+        }
+    }
 }
 
 .items {
     position: fixed;
     right: 0px;
     width: 50%;
-    height: 100%;
+    height: 100vh;
     background: black;
     transition: all .9s ease-in-out;
-    transform: translate3d(0px, -100vh, 0px);
+    transform: translate3d(0px, -110vh, 0px);
     z-index: 110;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding-left: 100px;
     text-align: justify;
+    @media screen and (max-width: $movil) {
+        & {
+            width: 100%;
+            padding-left: 50px;
+        }
+    }
     a li {
         text-decoration: none;
         color: #fff;
