@@ -110,7 +110,6 @@ $movil: 767px;
     .obrero {
         width: 50%;
         height: 100%;
-        border: 1px solid black;
         @media screen and (max-width: $movil) {
             & {
                 width: 100%;
@@ -689,13 +688,9 @@ $movil: 767px;
             background-size: cover;
             background-repeat: no-repeat;
             transition: all .3s ease-out;
+            margin-bottom: 10px;
             &:hover {
                 transform: scale(1.03);
-            }
-            @media screen and (max-width: $movil) {
-                & {
-                    margin: 0
-                }
             }
         }
         .gal1 {
@@ -726,6 +721,7 @@ $movil: 767px;
             font-size: 16px;
             color: #1c1b1b;
             font-weight: bold;
+            display: none;
         }
     }
     .contacto {
