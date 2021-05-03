@@ -33,14 +33,16 @@ body::-webkit-scrollbar-thumb {
 }
 
 
+/* Responsive */
+
+$movil: 767px;
+$tabletH: 768px;
+$tabletV: 1024px;
+
 /* Tipografía */
 
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Montserrat&display=swap');
-
-/* Responsive */
-
-$movil: 767px;
 @mixin linea {
     width: 20%;
     height: 2px;
@@ -103,6 +105,11 @@ $movil: 767px;
     font-size: 5rem;
     font-weight: bold;
     @media screen and (max-width: $movil) {
+        & {
+            flex-wrap: wrap;
+        }
+    }
+    @media (min-width: $movil) and (max-width: $tabletV) and (orientation: landscape) {
         & {
             flex-wrap: wrap;
         }
