@@ -8,14 +8,19 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+* html body {
+    overflow-x: hidden;
+
+}
+
 body {
     background: #fff;
-    overflow-x: hidden!important;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
 a {
-    text-decoration: none!important;
+    text-decoration: none !important;
 }
 
 
@@ -43,6 +48,7 @@ $tabletV: 1024px;
 
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Montserrat&display=swap');
+
 @mixin linea {
     width: 20%;
     height: 2px;
@@ -55,12 +61,14 @@ $tabletV: 1024px;
     font-family: 'Montserrat', sans-serif;
     font-size: 3.5rem;
     font-weight: bold;
+
     @media screen and (max-width: $movil) {
         & {
             font-size: 2rem;
         }
     }
 }
+
 @mixin imgObreros {
     background-position: center;
     background-size: cover;
@@ -87,14 +95,20 @@ $tabletV: 1024px;
     z-index: 200;
     cursor: pointer;
     transition: all .4s ease-in-out;
+
     &:hover {
         background: linear-gradient(135deg, rgb(221, 187, 34) 0%, rgb(196, 118, 30) 100%, rgb(218, 184, 33) 100%);
         transform: scale(1.04);
     }
+
     @media screen and (max-width: $movil) {
         & {
-            top: 15px;
             right: 10px;
+        }
+    } 
+    @media screen and(min-width: $tabletH) and(max-width: $tabletV){
+        & {
+            right: 30px;
         }
     }
 }
@@ -110,53 +124,62 @@ $tabletV: 1024px;
     justify-content: center;
     font-size: 5rem;
     font-weight: bold;
+
     @media screen and (max-width: $movil) {
         & {
             flex-wrap: wrap;
         }
     }
+
     .obrero {
         width: 50%;
         height: 100vh;
+
         @media screen and (max-width: $movil) {
             & {
                 width: 100%;
             }
         }
-        @media screen and(min-width: $tabletH) and (max-width: $tabletV){
+
+        @media screen and(min-width: $tabletH) and (max-width: $tabletV) {
             & {
                 width: 100%;
             }
         }
     }
-    
+
     .obrero1 {
         background-image: url("../assets/img/imagen_1.png");
         @include imgObreros();
         display: flex;
         align-items: center;
         justify-content: center;
+
         .logo {
             width: 50%;
             height: 50%;
             object-fit: contain;
+
             @media screen and (max-width: $movil) {
                 & {
-                    width: 95%;
+                    width: 80%;
                     height: 70%;
                 }
             }
         }
     }
+
     .obrero2 {
         background-image: url("../assets/img/imagen_2.png");
         @include imgObreros();
+
         @media screen and (max-width: $movil) {
             & {
                 display: none;
             }
         }
-        @media screen and(min-width: $tabletH) and (max-width: $tabletV){
+
+        @media screen and(min-width: $tabletH) and (max-width: $tabletV) {
             & {
                 display: none;
             }
@@ -177,9 +200,11 @@ $tabletV: 1024px;
     transition: all .9s ease-in-out;
     transform: translate3d(-110%, 0%, 0px);
     z-index: 110;
+
     &:hover {
         transform: scale(1.03);
     }
+
     @media screen and (max-width: $movil) {
         & {
             display: none;
@@ -202,27 +227,33 @@ $tabletV: 1024px;
     align-items: flex-start;
     justify-content: center;
     padding-left: 50px;
+
     .link-correo {
         display: flex;
         color: #fff;
         margin-bottom: 15px;
+
         i {
             font-size: 20px;
         }
+
         p {
             font-size: 14px;
             margin: 0 0 0 10px;
         }
+
         &:hover {
             color: #f9d115;
         }
     }
+
     @media screen and (max-width: $movil) {
         & {
             display: none;
         }
     }
-    @media screen and(min-width: $tabletH) and (max-width: $tabletV){
+
+    @media screen and(min-width: $tabletH) and (max-width: $tabletV) {
         & {
             width: 50%;
 
@@ -244,17 +275,20 @@ $tabletV: 1024px;
     display: flex;
     align-items: center;
     justify-content: center;
+
     img {
         width: 300px;
         height: 300px;
         object-fit: contain;
     }
+
     @media screen and (max-width: $movil) {
         & {
             display: none;
         }
     }
-    @media screen and(min-width: $tabletH) and (max-width: $tabletV){
+
+    @media screen and(min-width: $tabletH) and (max-width: $tabletV) {
         & {
             display: none;
 
@@ -276,26 +310,31 @@ $tabletV: 1024px;
     justify-content: flex-start;
     padding-left: 100px;
     text-align: justify;
+
     @media screen and (max-width: $movil) {
         & {
             width: 100vw;
             padding-left: 50px;
         }
     }
-    @media screen and(min-width: $tabletH) and (max-width: $tabletV){
+
+    @media screen and(min-width: $tabletH) and (max-width: $tabletV) {
         & {
             padding-left: 50px;
         }
     }
+
     a li {
         text-decoration: none;
         color: #fff;
         font-size: 50px;
         line-height: 85px;
         list-style: none;
+
         &:hover {
             color: #f9d115
         }
+
         @media screen and (max-width: $movil) {
             & {
                 font-size: 35px;
@@ -331,6 +370,7 @@ $tabletV: 1024px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
     @media screen and (max-width: $movil) {
         & {
             height: 50vh;
@@ -357,14 +397,17 @@ $tabletV: 1024px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
+
     h2 {
         @include titulos();
         color: #fff;
     }
+
     p {
         color: #fff;
         font-size: 18px;
         padding: 0 30px;
+
         @media screen and (max-width: $movil) {
             & {
                 font-size: 14px;
@@ -372,8 +415,10 @@ $tabletV: 1024px;
             }
         }
     }
+
     .linea {
         @include linea();
+
         @media screen and (max-width: $movil) {
             & {
                 width: 50%;
@@ -388,25 +433,30 @@ $tabletV: 1024px;
 .valores {
     height: 400px;
     padding: 0 50px;
+
     @media screen and (max-width: $movil) {
         & {
             padding: 0;
         }
     }
+
     h2 {
         @include titulos();
         color: #1c1b1b;
         margin-bottom: 50px;
+
         @media screen and (min-width: $tabletH) and (max-width: $tabletV) {
             & {
                 padding: 5rem 0;
             }
         }
     }
+
     p {
         color: #1c1b1b;
         font-size: 18px;
         font-weight: bold;
+
         @media screen and (max-width: $movil) {
             & {
                 font-size: 14px;
@@ -414,22 +464,26 @@ $tabletV: 1024px;
             }
         }
     }
+
     .lineaVal {
         background-image: url("../assets/img/linea-valores.png");
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
+
         .img-valores {
             width: 130px;
             height: 130px;
             margin-bottom: 20px;
             transition: all .4s ease-in-out;
+
             @media screen and (max-width: $movil) {
                 & {
                     width: 90px;
                     height: 90px;
                 }
             }
+
             &:hover {
                 transform: scale(1.04);
             }
@@ -441,16 +495,19 @@ $tabletV: 1024px;
     height: auto;
     margin-top: 30px;
     margin-bottom: 80px;
+
     @media screen and (max-width: $movil) {
         & {
             margin-top: 150px;
         }
     }
+
     @media screen and(min-width: $tabletH) and (max-width: $tabletV) {
         & {
             margin-top: 500px;
         }
     }
+
     .caja-mision,
     .caja-vision {
         @media screen and (max-width: $movil) {
@@ -458,18 +515,21 @@ $tabletV: 1024px;
                 flex-wrap: wrap;
             }
         }
+
         @media screen and(min-width: $tabletH) and (max-width: $tabletV) {
             & {
                 flex-wrap: wrap;
             }
         }
 
-        
+
     }
+
     .img-mision {
         width: 80%;
         height: 80%;
         margin-bottom: 50px;
+
         @media screen and (max-width: $movil) {
             & {
                 width: 100%;
@@ -477,33 +537,38 @@ $tabletV: 1024px;
                 margin-bottom: 0;
             }
         }
+
         @media screen and(min-width: $tabletH) and (max-width: $tabletV) {
             & {
                 width: 100%;
             }
         }
     }
-    
+
 
     h2 {
         @include titulos();
         color: #1c1b1b;
         margin-bottom: 30px;
     }
+
     p {
         font-size: 22px;
         color: #1c1b1b;
         font-weight: bold;
         text-align: justify;
+
         @media screen and (max-width: $movil) {
             & {
                 font-size: 15px;
             }
         }
     }
+
     .linea {
         @include linea();
         width: 70%;
+
         @media screen and (max-width: $movil) {
             & {
                 margin: 0;
@@ -519,6 +584,7 @@ $tabletV: 1024px;
     width: 100vw;
     height: 400px;
     margin-bottom: 30px;
+
     &::before {
         content: '';
         position: absolute;
@@ -527,28 +593,33 @@ $tabletV: 1024px;
         height: 400px;
         background: rgba(0, 0, 0, 0.705);
         left: 0;
+
         @media screen and (max-width: $movil) {
             & {
                 height: 1200px;
             }
         }
+
         @media screen and(min-width: $tabletH) and (max-width: $tabletV) {
             & {
                 height: 800px;
             }
         }
     }
+
     .img {
         position: relative;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+
         &-estudios {
             height: 400px;
             padding: 50px;
             background-image: url("../assets/img/estudios-geotecnicos.jpg");
             @include imgObreros();
         }
+
         &-gimenta {
             height: 400px;
             padding: 50px;
@@ -557,6 +628,7 @@ $tabletV: 1024px;
 
 
         }
+
         &-estructura {
             height: 400px;
             padding: 50px;
@@ -566,6 +638,7 @@ $tabletV: 1024px;
 
         }
     }
+
     h3 {
         position: relative;
         z-index: 11;
@@ -573,17 +646,20 @@ $tabletV: 1024px;
         font-size: 25px;
         color: #f9d115;
         margin-bottom: 30px;
+
         @media screen and (max-width: $movil) {
             & {
                 font-size: 20px;
             }
         }
     }
+
     p {
         position: relative;
         z-index: 11;
         color: #fff;
         font-size: 20px;
+
         @media screen and (max-width: $movil) {
             & {
                 font-size: 16px;
@@ -598,20 +674,24 @@ $tabletV: 1024px;
 .area {
     height: 600px;
     margin-top: 5rem;
+
     @media screen and (max-width: $movil) {
         & {
             margin-top: 53rem;
         }
     }
-    @media screen and(min-width: $tabletH) and (max-width: $tabletV){
+
+    @media screen and(min-width: $tabletH) and (max-width: $tabletV) {
         & {
             margin-top: 30rem;
         }
     }
+
     .img-area {
         width: 100%;
         height: 100%;
     }
+
     .caja-roja {
         height: 50px;
         background: #b2261d;
@@ -619,6 +699,7 @@ $tabletV: 1024px;
         font-weight: bold;
         font-size: 16px;
     }
+
     p {
         color: #1c1b1b;
         font-size: 18px;
@@ -626,9 +707,11 @@ $tabletV: 1024px;
         text-align: justify;
         padding: 30px 160px 0 50px;
         letter-spacing: 0;
+
         span {
             color: #b2261d;
         }
+
         @media screen and (max-width: $movil) {
             & {
                 font-size: 15px;
@@ -636,36 +719,43 @@ $tabletV: 1024px;
                 padding: 30px 0 0 0;
             }
         }
-        @media screen and(min-width: $tabletH) and (max-width: $tabletV){
+
+        @media screen and(min-width: $tabletH) and (max-width: $tabletV) {
             & {
                 padding: 50px 50px 0 50px;
             }
         }
     }
+
     h2 {
         @include titulos();
         margin: 50px 0;
     }
+
     .img-cajas {
         width: 100%;
         height: 300px;
         padding: 0;
     }
+
     @mixin sizeLista {
         background: #ececec;
         height: 370px;
         padding: 30px 0 30px 30px;
+
         @media screen and (max-width: $movil) {
             & {
                 height: auto;
                 padding: 20px 0 20px 30px;
             }
         }
+
         li {
             padding: 10px;
             font-size: 16px;
             color: #1c1b1b;
             font-weight: bold;
+
             @media screen and (max-width: $movil) {
                 & {
                     font-size: 14px;
@@ -673,27 +763,33 @@ $tabletV: 1024px;
             }
         }
     }
+
     .lista {
         @include sizeLista();
     }
+
     .lista2 {
         @include sizeLista();
         height: 430px;
+
         @media screen and (max-width: $movil) {
             & {
                 height: auto;
             }
         }
     }
+
     .lista3 {
         @include sizeLista();
         height: 200px;
+
         @media screen and (max-width: $movil) {
             & {
                 height: auto;
             }
         }
     }
+
     @mixin sizeServicios {
         width: 100%;
         height: 280px;
@@ -701,27 +797,33 @@ $tabletV: 1024px;
         background-position: center;
         background-repeat: no-repeat;
     }
+
     .integral {
         @include sizeServicios();
         background-image: url("../assets/img/proyecto-implementaciones.jpg");
     }
+
     .tecnica {
         @include sizeServicios();
         background-image: url("../assets/img/asistencia-tecnica.jpg");
     }
+
     .patologias {
         @include sizeServicios();
         background-image: url("../assets/img/patologias.jpg");
     }
+
     .estructural {
         @include sizeServicios();
         background-image: url("../assets/img/evaluacion-estructural.jpg");
     }
+
     .estudios {
         @include sizeServicios();
         height: 480px;
         margin-left: -15px;
         background-image: url("../assets/img/estudios-geotecnicos.jpg");
+
         @media screen and (max-width: $movil) {
             & {
                 height: 280px;
@@ -730,11 +832,13 @@ $tabletV: 1024px;
             }
         }
     }
+
     .peritajes {
         @include sizeServicios();
         height: 480px;
         margin-right: -15px;
         background-image: url("../assets/img/peritajes-estructurales.jpg");
+
         @media screen and (max-width: $movil) {
             & {
                 height: 280px;
@@ -743,11 +847,13 @@ $tabletV: 1024px;
             }
         }
     }
+
     .capacitacion {
         @include sizeServicios();
         height: 250px;
         margin-left: -15px;
         background-image: url("../assets/img/capacitacion.jpg");
+
         @media screen and (max-width: $movil) {
             & {
                 height: 280px;
@@ -757,14 +863,17 @@ $tabletV: 1024px;
             }
         }
     }
+
     .galeria {
         margin: 50px 0;
+
         @media screen and (max-width: $movil) {
             & {
                 margin: 50px 0 0 0;
                 padding-left: 0;
             }
         }
+
         @mixin siszeGal {
             width: 100%;
             height: 300px;
@@ -773,34 +882,42 @@ $tabletV: 1024px;
             background-repeat: no-repeat;
             transition: all .3s ease-out;
             margin-bottom: 10px;
+
             &:hover {
                 transform: scale(1.03);
             }
         }
+
         .gal1 {
             @include siszeGal();
             background-image: url("../assets/img/img1.jpg");
         }
+
         .gal2 {
             @include siszeGal();
             background-image: url("../assets/img/img2.jpg");
         }
+
         .gal3 {
             @include siszeGal();
             background-image: url("../assets/img/img3.jpg");
         }
+
         .gal4 {
             @include siszeGal();
             background-image: url("../assets/img/img4.jpg");
         }
+
         .gal5 {
             @include siszeGal();
             background-image: url("../assets/img/img5.jpg");
         }
+
         .gal6 {
             @include siszeGal();
             background-image: url("../assets/img/img6.jpg");
         }
+
         h3 {
             font-size: 16px;
             color: #1c1b1b;
@@ -808,8 +925,10 @@ $tabletV: 1024px;
             display: none;
         }
     }
+
     .contacto {
         height: auto;
+
         @media screen and (max-width: $movil) {
             h3 {
                 font-size: 16px;
@@ -817,14 +936,17 @@ $tabletV: 1024px;
             }
         }
     }
+
     .alertas {
         width: 65%;
         margin: 0 auto;
+
         @media screen and (max-width: $movil) {
             & {
                 width: 95%;
             }
         }
+
         @mixin alertas {
             position: fixed;
             top: 1%;
@@ -843,13 +965,15 @@ $tabletV: 1024px;
             z-index: 100;
             @media screen and (max-width: $movil) {
                 & {
-                    right: 0%;
-                    width: 100%;
+                    left: 0%;
+                    width: 95%;
                 }
             }
+
             i {
                 font-size: 1.5rem;
                 margin-right: 10px;
+
                 @media screen and (max-width: $movil) {
                     & {
                         padding-left: 20px;
@@ -857,6 +981,7 @@ $tabletV: 1024px;
                     }
                 }
             }
+
             h6 {
                 font-size: 14px;
                 text-transform: uppercase;
@@ -864,6 +989,7 @@ $tabletV: 1024px;
                 letter-spacing: 3px;
                 margin-top: 10px;
                 text-align: center;
+
                 @media screen and (max-width: $movil) {
                     & {
                         letter-spacing: 0;
@@ -873,9 +999,11 @@ $tabletV: 1024px;
                 }
             }
         }
+
         .error {
             @include alertas();
         }
+
         .exito {
             @include alertas();
             color: #155724;
@@ -883,12 +1011,14 @@ $tabletV: 1024px;
             border-color: #c3e6cb;
         }
     }
+
     input {
         padding: 20px 10px;
         margin: 15px 0;
-        border-radius: 0!important;
+        border-radius: 0 !important;
         border: 1px solid #1c1b1b;
     }
+
     button {
         padding: 10px 50px;
         background: #b2261d;
@@ -896,31 +1026,38 @@ $tabletV: 1024px;
         border: transparent;
         transition: all .3s ease-in-out;
         cursor: pointer;
+
         &:hover {
             transform: scale(1.03);
         }
     }
+
     .info-con {
         padding: 10% 0 0 0;
+
         a {
             text-decoration: none;
         }
+
         i {
             font-size: 20px;
             color: #1c1b1b;
         }
     }
+
     h4 {
         font-size: 16px;
         color: #1c1b1b;
         font-weight: bold;
         margin-left: -30px;
+
         @media screen and (max-width: $movil) {
             & {
                 margin-left: -20px;
             }
         }
     }
+
     h5 {
         font-size: 16px;
         color: #1c1b1b;
@@ -936,9 +1073,11 @@ $tabletV: 1024px;
     align-items: center;
     justify-content: center;
     margin-top: 50px;
+
     h2 {
         color: #fff;
         font-size: 16px;
+
         span a {
             color: #fff;
             text-decoration: none;

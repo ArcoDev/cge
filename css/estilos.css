@@ -10,9 +10,13 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+* html body {
+  overflow-x: hidden;
+}
+
 body {
   background: #fff;
-  overflow-x: hidden !important;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -60,8 +64,13 @@ body::-webkit-scrollbar-thumb {
 
 @media screen and (max-width: 767px) {
   .menu {
-    top: 15px;
     right: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .menu {
+    right: 30px;
   }
 }
 
@@ -118,7 +127,7 @@ body::-webkit-scrollbar-thumb {
 
 @media screen and (max-width: 767px) {
   .caja-obreros .obrero1 .logo {
-    width: 95%;
+    width: 80%;
     height: 70%;
   }
 }
@@ -1058,8 +1067,8 @@ body::-webkit-scrollbar-thumb {
 
 @media screen and (max-width: 767px) {
   .area .alertas .error {
-    right: 0%;
-    width: 100%;
+    left: 0%;
+    width: 95%;
   }
 }
 
@@ -1115,8 +1124,8 @@ body::-webkit-scrollbar-thumb {
 
 @media screen and (max-width: 767px) {
   .area .alertas .exito {
-    right: 0%;
-    width: 100%;
+    left: 0%;
+    width: 95%;
   }
 }
 
