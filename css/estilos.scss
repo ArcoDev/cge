@@ -61,6 +61,12 @@ $tabletV: 1024px;
         }
     }
 }
+@mixin imgObreros {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
 
 
 /* Menu*/
@@ -109,11 +115,6 @@ $tabletV: 1024px;
             flex-wrap: wrap;
         }
     }
-    @media (min-width: $movil) and (max-width: $tabletV) and (orientation: landscape) {
-        & {
-            flex-wrap: wrap;
-        }
-    }
     .obrero {
         width: 50%;
         height: 100vh;
@@ -122,13 +123,13 @@ $tabletV: 1024px;
                 width: 100%;
             }
         }
+        @media screen and(min-width: $tabletH) and (max-width: $tabletV){
+            & {
+                width: 100%;
+            }
+        }
     }
-    @mixin imgObreros {
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        object-fit: cover;
-    }
+    
     .obrero1 {
         background-image: url("../assets/img/imagen_1.png");
         @include imgObreros();
@@ -151,6 +152,11 @@ $tabletV: 1024px;
         background-image: url("../assets/img/imagen_2.png");
         @include imgObreros();
         @media screen and (max-width: $movil) {
+            & {
+                display: none;
+            }
+        }
+        @media screen and(min-width: $tabletH) and (max-width: $tabletV){
             & {
                 display: none;
             }
@@ -216,6 +222,13 @@ $tabletV: 1024px;
             display: none;
         }
     }
+    @media screen and(min-width: $tabletH) and (max-width: $tabletV){
+        & {
+            width: 50%;
+
+        }
+    }
+
 }
 
 .logo-men {
@@ -241,6 +254,12 @@ $tabletV: 1024px;
             display: none;
         }
     }
+    @media screen and(min-width: $tabletH) and (max-width: $tabletV){
+        & {
+            display: none;
+
+        }
+    }
 }
 
 .items {
@@ -260,6 +279,11 @@ $tabletV: 1024px;
     @media screen and (max-width: $movil) {
         & {
             width: 100vw;
+            padding-left: 50px;
+        }
+    }
+    @media screen and(min-width: $tabletH) and (max-width: $tabletV){
+        & {
             padding-left: 50px;
         }
     }
@@ -325,12 +349,14 @@ $tabletV: 1024px;
 /*Nosotros*/
 
 .nosotros {
+    width: 100vw;
     height: 400px;
     background: url("../assets/img/nosotros.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin: 0;
     h2 {
         @include titulos();
         color: #fff;
@@ -371,6 +397,11 @@ $tabletV: 1024px;
         @include titulos();
         color: #1c1b1b;
         margin-bottom: 50px;
+        @media screen and (min-width: $tabletH) and (max-width: $tabletV) {
+            & {
+                padding: 5rem 0;
+            }
+        }
     }
     p {
         color: #1c1b1b;
@@ -379,6 +410,7 @@ $tabletV: 1024px;
         @media screen and (max-width: $movil) {
             & {
                 font-size: 14px;
+                margin-bottom: 0;
             }
         }
     }
@@ -414,6 +446,11 @@ $tabletV: 1024px;
             margin-top: 150px;
         }
     }
+    @media screen and(min-width: $tabletH) and (max-width: $tabletV) {
+        & {
+            margin-top: 500px;
+        }
+    }
     .caja-mision,
     .caja-vision {
         @media screen and (max-width: $movil) {
@@ -421,6 +458,13 @@ $tabletV: 1024px;
                 flex-wrap: wrap;
             }
         }
+        @media screen and(min-width: $tabletH) and (max-width: $tabletV) {
+            & {
+                flex-wrap: wrap;
+            }
+        }
+
+        
     }
     .img-mision {
         width: 80%;
@@ -433,7 +477,14 @@ $tabletV: 1024px;
                 margin-bottom: 0;
             }
         }
+        @media screen and(min-width: $tabletH) and (max-width: $tabletV) {
+            & {
+                width: 100%;
+            }
+        }
     }
+    
+
     h2 {
         @include titulos();
         color: #1c1b1b;
@@ -465,19 +516,25 @@ $tabletV: 1024px;
 /* Info texto */
 
 .info-txt {
+    width: 100vw;
     height: 400px;
     margin-bottom: 30px;
     &::before {
         content: '';
         position: absolute;
         z-index: 10;
-        width: 100%;
+        width: 101%;
         height: 400px;
         background: rgba(0, 0, 0, 0.705);
         left: 0;
         @media screen and (max-width: $movil) {
             & {
                 height: 1200px;
+            }
+        }
+        @media screen and(min-width: $tabletH) and (max-width: $tabletV) {
+            & {
+                height: 800px;
             }
         }
     }
@@ -490,16 +547,23 @@ $tabletV: 1024px;
             height: 400px;
             padding: 50px;
             background-image: url("../assets/img/estudios-geotecnicos.jpg");
+            @include imgObreros();
         }
         &-gimenta {
             height: 400px;
             padding: 50px;
             background-image: url("../assets/img/cimentaciones.jpg");
+            @include imgObreros();
+
+
         }
         &-estructura {
             height: 400px;
             padding: 50px;
             background-image: url("../assets/img/estructuras.jpg");
+            @include imgObreros();
+
+
         }
     }
     h3 {
@@ -533,9 +597,15 @@ $tabletV: 1024px;
 
 .area {
     height: 600px;
+    margin-top: 5rem;
     @media screen and (max-width: $movil) {
         & {
             margin-top: 53rem;
+        }
+    }
+    @media screen and(min-width: $tabletH) and (max-width: $tabletV){
+        & {
+            margin-top: 30rem;
         }
     }
     .img-area {
@@ -564,6 +634,11 @@ $tabletV: 1024px;
                 font-size: 15px;
                 text-align: unset;
                 padding: 30px 0 0 0;
+            }
+        }
+        @media screen and(min-width: $tabletH) and (max-width: $tabletV){
+            & {
+                padding: 50px 50px 0 50px;
             }
         }
     }

@@ -82,18 +82,18 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-@media (min-width: 767px) and (max-width: 1024px) and (orientation: landscape) {
-  .caja-obreros {
-    flex-wrap: wrap;
-  }
-}
-
 .caja-obreros .obrero {
   width: 50%;
   height: 100vh;
 }
 
 @media screen and (max-width: 767px) {
+  .caja-obreros .obrero {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .caja-obreros .obrero {
     width: 100%;
   }
@@ -132,6 +132,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 767px) {
+  .caja-obreros .obrero2 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .caja-obreros .obrero2 {
     display: none;
   }
@@ -204,6 +210,12 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .correo-tel {
+    width: 50%;
+  }
+}
+
 .logo-men {
   position: fixed;
   left: 25%;
@@ -231,6 +243,12 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .logo-men {
+    display: none;
+  }
+}
+
 .items {
   position: fixed;
   right: 0px;
@@ -250,6 +268,12 @@ body::-webkit-scrollbar-thumb {
 @media screen and (max-width: 767px) {
   .items {
     width: 100vw;
+    padding-left: 50px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .items {
     padding-left: 50px;
   }
 }
@@ -302,12 +326,14 @@ body::-webkit-scrollbar-thumb {
 
 /*Nosotros*/
 .nosotros {
+  width: 100vw;
   height: 400px;
   background: url("../assets/img/nosotros.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  margin: 0;
 }
 
 .nosotros h2 {
@@ -377,6 +403,12 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .valores h2 {
+    padding: 5rem 0;
+  }
+}
+
 .valores p {
   color: #1c1b1b;
   font-size: 18px;
@@ -386,6 +418,7 @@ body::-webkit-scrollbar-thumb {
 @media screen and (max-width: 767px) {
   .valores p {
     font-size: 14px;
+    margin-bottom: 0;
   }
 }
 
@@ -426,7 +459,20 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .info-valores {
+    margin-top: 500px;
+  }
+}
+
 @media screen and (max-width: 767px) {
+  .info-valores .caja-mision,
+  .info-valores .caja-vision {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .info-valores .caja-mision,
   .info-valores .caja-vision {
     flex-wrap: wrap;
@@ -444,6 +490,12 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     height: 100%;
     margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .info-valores .img-mision {
+    width: 100%;
   }
 }
 
@@ -491,6 +543,7 @@ body::-webkit-scrollbar-thumb {
 
 /* Info texto */
 .info-txt {
+  width: 100vw;
   height: 400px;
   margin-bottom: 30px;
 }
@@ -499,7 +552,7 @@ body::-webkit-scrollbar-thumb {
   content: '';
   position: absolute;
   z-index: 10;
-  width: 100%;
+  width: 101%;
   height: 400px;
   background: rgba(0, 0, 0, 0.705);
   left: 0;
@@ -508,6 +561,12 @@ body::-webkit-scrollbar-thumb {
 @media screen and (max-width: 767px) {
   .info-txt::before {
     height: 1200px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .info-txt::before {
+    height: 800px;
   }
 }
 
@@ -522,18 +581,30 @@ body::-webkit-scrollbar-thumb {
   height: 400px;
   padding: 50px;
   background-image: url("../assets/img/estudios-geotecnicos.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
 }
 
 .info-txt .img-gimenta {
   height: 400px;
   padding: 50px;
   background-image: url("../assets/img/cimentaciones.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
 }
 
 .info-txt .img-estructura {
   height: 400px;
   padding: 50px;
   background-image: url("../assets/img/estructuras.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
 }
 
 .info-txt h3 {
@@ -576,11 +647,18 @@ body::-webkit-scrollbar-thumb {
 /* Info area */
 .area {
   height: 600px;
+  margin-top: 5rem;
 }
 
 @media screen and (max-width: 767px) {
   .area {
     margin-top: 53rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .area {
+    margin-top: 30rem;
   }
 }
 
@@ -615,6 +693,12 @@ body::-webkit-scrollbar-thumb {
     font-size: 15px;
     text-align: unset;
     padding: 30px 0 0 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .area p {
+    padding: 50px 50px 0 50px;
   }
 }
 
