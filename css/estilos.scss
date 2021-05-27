@@ -116,7 +116,7 @@ $tabletV: 1024px;
     }
     .obrero {
         width: 50%;
-        height: 100%;
+        height: 100vh;
         @media screen and (max-width: $movil) {
             & {
                 width: 100%;
@@ -131,12 +131,13 @@ $tabletV: 1024px;
     }
     .obrero1 {
         background-image: url("../assets/img/imagen_1.png");
+        @include imgObreros();
         display: flex;
         align-items: center;
         justify-content: center;
         .logo {
-            width: 550px;
-            height: 400px;
+            width: 50%;
+            height: 50%;
             object-fit: contain;
             @media screen and (max-width: $movil) {
                 & {
@@ -148,6 +149,7 @@ $tabletV: 1024px;
     }
     .obrero2 {
         background-image: url("../assets/img/imagen_2.png");
+        @include imgObreros();
         @media screen and (max-width: $movil) {
             & {
                 display: none;
